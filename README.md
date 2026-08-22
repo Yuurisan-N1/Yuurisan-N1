@@ -8,8 +8,6 @@
 <a href="https://x.com/Yuurisan_N1"><img src="https://img.shields.io/badge/X-@Yuurisan__N1-111111?style=for-the-badge&logo=x&logoColor=white" alt="X @Yuurisan_N1" /></a>
 <a href="https://t.me/Y3YuYuYo"><img src="https://img.shields.io/badge/Telegram-Y3YuYuYo-0088CC?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Y3YuYuYo" /></a>
 
-<br/><br/>
-
 
 <p><i>Designing logic, building useful systems, and learning continuously.</i></p>
 
