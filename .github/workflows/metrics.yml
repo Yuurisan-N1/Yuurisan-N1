@@ -8,10 +8,40 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
     steps:
+      - name: Discover owned repositories
+        id: repositories
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          repositories="$(
+            gh api --paginate \
+              'user/repos?per_page=100&affiliation=owner&visibility=all' \
+              --jq '.[].full_name' \
+              | paste -sd ',' -
+          )"
+
+          if [ -z "$repositories" ]; then
+            echo "No owned repositories were found."
+            exit 1
+          fi
+
+          echo "Repositories discovered:"
+          echo "$repositories" | tr ',' '\n'
+
+          {
+            echo "list<<EOF"
+            echo "$repositories"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Base Stats
         uses: lowlighter/metrics@latest
         with:
@@ -26,8 +56,16 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: metrics.langs.svg
           base: ""
+
           plugin_languages: yes
-          plugin_languages_analysis_timeout: 15
+
+          # Analyze repository contents directly instead of relying
+          # only on GitHub language statistics.
+          plugin_languages_indepth: yes
+          plugin_languages_indepth_custom: ${{ steps.repositories.outputs.list }}
+          plugin_languages_analysis_timeout: 60
+          plugin_languages_analysis_timeout_repositories: 15
+
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
           plugin_languages_limit: 8
@@ -58,7 +96,7 @@ jobs:
       - name: Snake Animation
         uses: Platane/snk@v3
         with:
-          github_user_name: Yuurisan-N1
+          github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/snake.svg
             dist/snake-dark.svg?palette=github-dark
