@@ -36,6 +36,8 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
           plugin_languages_ignored: jupyter notebook
+          commits_authoring: ${{ secrets.COMMITS_AUTHORING }}
+          repositories_forks: yes
 
       - name: Achievements
         uses: lowlighter/metrics@latest
