@@ -28,8 +28,8 @@ jobs:
           base: ""
           plugin_languages: yes
           plugin_languages_indepth: yes
+          plugin_languages_indepth_custom: Yuurisan-N1/Wallet-Lab, Yuurisan-N1/Khobaurong-Miniapp, Yuurisan-N1/PaidZ-Miniapp, Yuurisan-N1/Dragonzoo-Miniapp
           plugin_languages_analysis_timeout: 180
-          plugin_languages_analysis_timeout_repositories: 60
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
           plugin_languages_limit: 12
