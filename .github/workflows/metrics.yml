@@ -21,25 +21,21 @@ jobs:
           plugin_lines: yes
 
       - name: Languages
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: metrics.langs.svg
           base: ""
           plugin_languages: yes
           plugin_languages_indepth: yes
-          plugin_languages_indepth_custom: Yuurisan-N1/Wallet-Lab, Yuurisan-N1/Khobaurong-Miniapp, Yuurisan-N1/PaidZ-Miniapp, Yuurisan-N1/Dragonzoo-Miniapp
-          plugin_languages_analysis_timeout: 180
+          plugin_languages_analysis_timeout: 60
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
-          plugin_languages_limit: 12
+          plugin_languages_limit: 8
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
-          plugin_languages_ignored: jupyter notebook, cmake
-          plugin_languages_recent_days: 365
-          plugin_languages_recent_load: 1000
+          plugin_languages_ignored: jupyter notebook
           commits_authoring: ${{ secrets.COMMITS_AUTHORING }}
-          repositories_batch: 10
 
       - name: Achievements
         uses: lowlighter/metrics@latest
