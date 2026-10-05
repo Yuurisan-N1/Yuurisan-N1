@@ -35,7 +35,9 @@ jobs:
           plugin_languages_limit: 12
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
-          plugin_languages_ignored: jupyter notebook, makefile, cmake
+          plugin_languages_ignored: jupyter notebook, cmake
+          plugin_languages_recent_days: 365
+          plugin_languages_recent_load: 1000
           commits_authoring: ${{ secrets.COMMITS_AUTHORING }}
           repositories_batch: 10
 
