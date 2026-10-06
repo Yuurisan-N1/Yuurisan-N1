@@ -1,4 +1,3 @@
-import os
 import re
 import requests
 
@@ -6,16 +5,16 @@ USERNAME = 'Yuurisan-N1'
 
 
 def fetch_views():
-\    try:
+    try:
         resp = requests.get(
             f'https://komarev.com/ghpvc/?username={USERNAME}&abbreviated=false',
             timeout=10
         )
-\        match = re.search(r'>(\d[\d,]*)<', resp.text)
+        match = re.search(r'>(\d[\d,]*)<', resp.text)
         if match:
             return int(match.group(1).replace(',', ''))
     except Exception as e:
-        print(f"Warning: could not fetch views: {e}")
+        print(f"Warning: {e}")
     return 0
 
 
@@ -52,14 +51,12 @@ def eye_icon(cx, cy, size=14, color="#ff2d8d"):
 
 def generate_svg(views):
     W, H = 860, 118
-    views_str = f'{views:,}' if views > 0 else '—'
+    views_str = f'{views:,}' if views > 0 else '-'
 
     parts = []
     parts.append(f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">')
     parts.append('<style>text{font-family:ui-monospace,"SFMono-Regular",monospace}</style>')
     parts.append(f'<rect width="{W}" height="{H}" rx="8" fill="#0d1117"/>')
-
-    # subtle top rule
     parts.append(
         f'<line x1="40" y1="1" x2="{W-40}" y2="1" stroke="#6d28d9" stroke-width="1">'
         f'<animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite"/>'
@@ -83,7 +80,6 @@ def generate_svg(views):
 
     parts.append(f'<line x1="40" y1="90" x2="{W-40}" y2="90" stroke="#1e2a1e" stroke-width="1"/>')
     parts.append(f'<text x="{W//2}" y="108" font-size="9" fill="#374151" text-anchor="middle" letter-spacing="3">BUILD WITH INTENTION · IMPROVE EVERY DAY</text>')
-
     parts.append('</svg>')
     return "\n".join(parts)
 
