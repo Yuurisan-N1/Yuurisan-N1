@@ -38,6 +38,13 @@
 ---
 
 <div align="center">
+<h2>Commit Streak</h2>
+<img src="https://raw.githubusercontent.com/Yuurisan-N1/Yuurisan-N1/main/metrics.streak.svg" alt="Commit streak" />
+</div>
+
+---
+
+<div align="center">
 <h2>Contribution Calendar</h2>
 <img src="https://raw.githubusercontent.com/Yuurisan-N1/Yuurisan-N1/main/metrics.isocalendar.svg" alt="Contribution calendar" />
 </div>
