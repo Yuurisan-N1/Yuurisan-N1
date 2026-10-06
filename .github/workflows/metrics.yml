@@ -78,10 +78,13 @@ jobs:
           METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: python generate_langs.py
 
-      - name: Commit SVG
+      - name: Generate tech stack SVG
+        run: python generate_techstack.py
+
+      - name: Commit SVGs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add metrics.langs.svg
-          git diff --cached --quiet || git commit -m "feat: update language statistics svg from self hosted script"
+          git add metrics.langs.svg metrics.techstack.svg
+          git diff --cached --quiet || git commit -m "feat: update language and tech stack svgs"
           git push

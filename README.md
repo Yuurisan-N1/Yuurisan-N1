@@ -8,7 +8,6 @@
 <a href="https://x.com/Yuurisan_N1"><img src="https://img.shields.io/badge/X-@Yuurisan__N1-111111?style=for-the-badge&logo=x&logoColor=white" alt="X @Yuurisan_N1" /></a>
 <a href="https://t.me/Y3YuYuYo"><img src="https://img.shields.io/badge/Telegram-Y3YuYuYo-0088CC?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Y3YuYuYo" /></a>
 
-
 <p><i>Designing logic, building useful systems, and learning continuously.</i></p>
 
 </div>
@@ -26,14 +25,7 @@
 
 <div align="center">
 <h2>Tech Stack</h2>
-<h3>Languages and Blockchain</h3>
-<img src="https://skillicons.dev/icons?i=html,css,js,ts,python,php,java,go,rust,solidity&perline=10" alt="Languages and blockchain tools" />
-<h3>Frameworks and Runtime</h3>
-<img src="https://skillicons.dev/icons?i=react,vue,svelte,nextjs,nuxtjs,nodejs,express,vite,webpack,tailwind&perline=10" alt="Frameworks and runtime" />
-<h3>Tools and Infrastructure</h3>
-<img src="https://skillicons.dev/icons?i=figma,git,github,linux,bash,docker,nginx,cloudflare,vercel,netlify&perline=10" alt="Tools and infrastructure" />
-<h3>Databases and Utilities</h3>
-<img src="https://skillicons.dev/icons?i=postgres,mysql,sqlite,redis,mongodb,postman,graphql,prisma,wasm&perline=9" alt="Databases and utilities" />
+<img src="https://raw.githubusercontent.com/Yuurisan-N1/Yuurisan-N1/main/metrics.techstack.svg" alt="Tech stack radar" />
 </div>
 
 ---
