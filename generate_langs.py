@@ -98,7 +98,7 @@ def donut_arc(cx, cy, R, r, start_deg, end_deg):
 
 
 def generate_svg(langs_data):
-    sorted_langs = sorted(langs_data.items(), key=lambda x: x[1]['size'], reverse=True)[:8]
+    sorted_langs = sorted(langs_data.items(), key=lambda x: x[1]['size'], reverse=True)[:16]
     total = sum(v['size'] for _, v in sorted_langs)
     if total == 0:
         return None
@@ -109,12 +109,13 @@ def generate_svg(langs_data):
         color = LANG_COLORS.get(name, data['color'])
         items.append({'name': name, 'pct': pct, 'color': color, 'size': data['size']})
 
-    W, H = 480, 220
-    cx, cy, R, r = 110, 115, 82, 54
+    W, H = 900, 240
+
+    cx, cy, R, r = 130, 125, 90, 58
 
     arcs = []
     angle = 0
-    gap = 1.5
+    gap = 1.2
     for item in items:
         sweep = item['pct'] / 100 * 360
         end = angle + sweep - gap
@@ -122,36 +123,41 @@ def generate_svg(langs_data):
             arcs.append(f'<path d="{donut_arc(cx, cy, R, r, angle, end)}" fill="{item["color"]}" />')
         angle += sweep
 
-    bar_x = 215
-    bar_area_w = 248
-    label_w = 100
-    pct_w = 36
-    fill_w = bar_area_w - label_w - pct_w - 8
-    row_h = 25
-    start_y = 28
+    col_start_x = 250
+    col_gap = 20
+    col_w = (W - col_start_x - col_gap - 20) // 2
+
+    label_w = 110
+    pct_w = 42
+    bar_w = col_w - label_w - pct_w - 10
+
+    row_h = 26
+    start_y = 22
 
     rows = []
     for i, item in enumerate(items):
-        y = start_y + i * row_h
-        filled = item['pct'] / 100 * fill_w
-        rows.append(f'''<circle cx="{bar_x + 5}" cy="{y + 5}" r="4" fill="{item['color']}"/>
-<text x="{bar_x + 15}" y="{y + 9}" font-size="11" fill="#c9d1d9">{item['name']}</text>
-<text x="{bar_x + label_w + fill_w + 6}" y="{y + 9}" font-size="11" fill="#8b949e" text-anchor="end">{item['pct']:.1f}%</text>
-<rect x="{bar_x + label_w}" y="{y + 13}" width="{fill_w:.1f}" height="4" rx="2" fill="#21262d"/>
-<rect x="{bar_x + label_w}" y="{y + 13}" width="{filled:.1f}" height="4" rx="2" fill="{item['color']}"/>''')
+        col = i // 8
+        row = i % 8
+        x = col_start_x + col * (col_w + col_gap)
+        y = start_y + row * row_h
+        filled = item['pct'] / 100 * bar_w
+        rows.append(
+            f'<circle cx="{x + 5}" cy="{y + 5}" r="4" fill="{item["color"]}"/>'
+            f'<text x="{x + 15}" y="{y + 9}" font-size="11" fill="#c9d1d9">{item["name"]}</text>'
+            f'<text x="{x + label_w + bar_w + 8}" y="{y + 9}" font-size="11" fill="#8b949e" text-anchor="end">{item["pct"]:.1f}%</text>'
+            f'<rect x="{x + label_w}" y="{y + 13}" width="{bar_w:.1f}" height="4" rx="2" fill="#21262d"/>'
+            f'<rect x="{x + label_w}" y="{y + 13}" width="{filled:.1f}" height="4" rx="2" fill="{item["color"]}"/>'
+        )
 
-    total_mb = total / 1024 / 1024
     nl = '\n'
-
     svg = f'''<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
 <style>text{{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}}</style>
 <rect width="{W}" height="{H}" rx="6" fill="#0d1117"/>
-<text x="16" y="20" font-size="12" fill="#8b949e">Most used languages</text>
+<text x="16" y="18" font-size="12" fill="#8b949e">Most used languages</text>
 {''.join(arcs)}
-<text x="{cx}" y="{cy + 6}" font-size="20" font-weight="bold" fill="#c9d1d9" text-anchor="middle">{len(items)}</text>
-<text x="{cx}" y="{cy + 20}" font-size="9" fill="#8b949e" text-anchor="middle">languages</text>
+<text x="{cx}" y="{cy + 7}" font-size="22" font-weight="bold" fill="#c9d1d9" text-anchor="middle">{len(items)}</text>
+<text x="{cx}" y="{cy + 22}" font-size="9" fill="#8b949e" text-anchor="middle">languages</text>
 {nl.join(rows)}
-<text x="16" y="{H - 6}" font-size="9" fill="#484f58">estimation from {total_mb:.0f}mb of code scanned across all repositories</text>
 </svg>'''
 
     return svg
