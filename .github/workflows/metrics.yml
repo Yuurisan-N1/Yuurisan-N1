@@ -20,23 +20,6 @@ jobs:
           base: header, activity, community, repositories
           plugin_lines: yes
 
-      - name: Languages
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          filename: metrics.langs.svg
-          base: ""
-          plugin_languages: yes
-          plugin_languages_indepth: yes
-          plugin_languages_analysis_timeout: 60
-          plugin_languages_categories: markup, programming
-          plugin_languages_colors: github
-          plugin_languages_limit: 8
-          plugin_languages_sections: most-used
-          plugin_languages_threshold: 0%
-          plugin_languages_ignored: jupyter notebook
-          commits_authoring: ${{ secrets.COMMITS_AUTHORING }}
-
       - name: Achievements
         uses: lowlighter/metrics@latest
         with:
@@ -72,3 +55,33 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  language-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate language SVG
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python generate_langs.py
+
+      - name: Commit SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add metrics.langs.svg
+          git diff --cached --quiet || git commit -m "feat: update language statistics svg from self hosted script"
+          git push
