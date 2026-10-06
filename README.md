@@ -5,8 +5,10 @@
 <h1>こんにちは 。I'm Yuurisan-N1</h1>
 <p>Web3 and AI enthusiast focused on architecture, practical systems, and user experiences.</p>
 
+<p>
 <a href="https://x.com/Yuurisan_N1"><img src="https://img.shields.io/badge/X-@Yuurisan__N1-111111?style=for-the-badge&logo=x&logoColor=white" alt="X @Yuurisan_N1" /></a>
 <a href="https://t.me/Y3YuYuYo"><img src="https://img.shields.io/badge/Telegram-Y3YuYuYo-0088CC?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Y3YuYuYo" /></a>
+</p>
 
 <p><i>Designing logic, building useful systems, and learning continuously.</i></p>
 
@@ -73,10 +75,7 @@
 
 <div align="center">
 <h2>Connect</h2>
-<p><a href="https://x.com/Yuurisan_N1">X: @Yuurisan_N1</a></p>
-<p><a href="https://t.me/Y3YuYuYo">Telegram: Y3YuYuYo</a></p>
-<img src="https://komarev.com/ghpvc/?username=Yuurisan-N1&style=for-the-badge&label=PROFILE+VIEWS&color=ff2d8d" alt="Profile views" />
-<p><sub>Build with intention. Improve every day.</sub></p>
+<img src="https://raw.githubusercontent.com/Yuurisan-N1/Yuurisan-N1/main/metrics.connect.svg" alt="Connect" />
 </div>
 
 <div align="center">
