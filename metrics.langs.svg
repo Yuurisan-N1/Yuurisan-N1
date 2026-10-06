@@ -1,26 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="85" class="">
-    <defs>
-        <style/>
-    </defs>
-    <style>@keyframes animation-gauge{0%{stroke-dasharray:0 329}}@keyframes animation-rainbow{0%,to{color:#7f00ff;fill:#7f00ff}14%{color:#a933ff;fill:#a933ff}29%{color:#007fff;fill:#007fff}43%{color:#00ff7f;fill:#00ff7f}57%{color:#ff0;fill:#ff0}71%{color:#ff7f00;fill:#ff7f00}86%{color:red;fill:red}}svg{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;color:#777}h2,h3{margin:8px 0 2px;padding:0;color:#0366d6;font-weight:400}h2 svg,h3 svg{fill:currentColor}h2{font-size:16px}h3,svg{font-size:14px}section&gt;.field{margin-left:5px;margin-right:5px}.column,.field{display:flex;align-items:center}.field{margin-bottom:2px;white-space:nowrap}.field svg{margin:0 8px;fill:#959da5;flex-shrink:0}.column{flex-direction:column}.center{justify-content:center}.horizontal-wrap{flex-wrap:wrap}#metrics-end,.fill-width{width:100%}.activity{margin-bottom:12px}.activity .field{width:100%;overflow:hidden;text-overflow:ellipsis;max-width:450px;white-space:nowrap;margin-bottom:0}:root{--color-calendar-graph-day-bg:#ebedf0;--color-calendar-graph-day-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-bg:#9be9a8;--color-calendar-graph-day-L2-bg:#40c463;--color-calendar-graph-day-L3-bg:#30a14e;--color-calendar-graph-day-L4-bg:#216e39;--color-calendar-halloween-graph-day-L1-bg:#ffee4a;--color-calendar-halloween-graph-day-L2-bg:#ffc501;--color-calendar-halloween-graph-day-L3-bg:#fe9600;--color-calendar-halloween-graph-day-L4-bg:#03001c;--color-calendar-winter-graph-day-L1-bg:#0a3069;--color-calendar-winter-graph-day-L2-bg:#0969da;--color-calendar-winter-graph-day-L3-bg:#54aeff;--color-calendar-winter-graph-day-L4-bg:#b6e3ff;--color-calendar-graph-day-L4-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L3-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L2-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-border:rgba(27,31,35,0.06)}</style>
-    <style/>
-    <foreignObject x="0" y="0" width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" class="items-wrapper">
-            <section>
-                <h2 class="field">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                        <path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25h-6.5a.75.75 0 00-.53.22L4.5 14.44v-2.19a.75.75 0 00-.75-.75h-2a.25.25 0 01-.25-.25v-8.5zM1.75 1A1.75 1.75 0 000 2.75v8.5C0 12.216.784 13 1.75 13H3v1.543a1.457 1.457 0 002.487 1.03L8.061 13h6.189A1.75 1.75 0 0016 11.25v-8.5A1.75 1.75 0 0014.25 1H1.75zm5.03 3.47a.75.75 0 010 1.06L5.31 7l1.47 1.47a.75.75 0 01-1.06 1.06l-2-2a.75.75 0 010-1.06l2-2a.75.75 0 011.06 0zm2.44 0a.75.75 0 000 1.06L10.69 7 9.22 8.47a.75.75 0 001.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0z"/>
-                    </svg>
-                    0 Languages
-                </h2>
-            </section>
-            <section class="column">
-                <h3 class="field">Most used languages</h3>
-                <small>No push activity found</small>
-                <div class="field center horizontal-wrap fill-width">
-                </div>
-            </section>
-        </div>
-        <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
-    </foreignObject>
+<svg width="480" height="220" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}</style>
+<rect width="480" height="220" rx="6" fill="#0d1117"/>
+<text x="16" y="20" font-size="12" fill="#8b949e">Most used languages</text>
+<path d="M110.00 33.00 A82 82 0 1 1 105.58 196.88 L107.09 168.92 A54 54 0 1 0 110.00 61.00Z" fill="#f34b7d" /><path d="M103.43 196.74 A82 82 0 0 1 29.34 100.21 L56.89 105.26 A54 54 0 0 0 105.68 168.83Z" fill="#6E4C13" /><path d="M29.76 98.11 A82 82 0 0 1 74.25 41.20 L86.46 66.40 A54 54 0 0 0 57.16 103.88Z" fill="#3572A5" /><path d="M76.20 40.29 A82 82 0 0 1 88.50 35.87 L95.84 62.89 A54 54 0 0 0 87.74 65.80Z" fill="#3A4E3A" /><path d="M90.58 35.33 A82 82 0 0 1 95.97 34.21 L100.76 61.80 A54 54 0 0 0 97.21 62.54Z" fill="#dea584" /><path d="M98.09 33.87 A82 82 0 0 1 103.50 33.26 L105.72 61.17 A54 54 0 0 0 102.16 61.57Z" fill="#555555" /><path d="M105.64 33.12 A82 82 0 0 1 106.17 33.09 L107.48 61.06 A54 54 0 0 0 107.13 61.08Z" fill="#89e051" />
+<text x="110" y="121" font-size="20" font-weight="bold" fill="#c9d1d9" text-anchor="middle">8</text>
+<text x="110" y="135" font-size="9" fill="#8b949e" text-anchor="middle">languages</text>
+<circle cx="220" cy="33" r="4" fill="#f34b7d"/>
+<text x="230" y="37" font-size="11" fill="#c9d1d9">C++</text>
+<text x="425" y="37" font-size="11" fill="#8b949e" text-anchor="end">51.3%</text>
+<rect x="315" y="41" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="41" width="53.3" height="4" rx="2" fill="#f34b7d"/>
+<circle cx="220" cy="58" r="4" fill="#6E4C13"/>
+<text x="230" y="62" font-size="11" fill="#c9d1d9">Assembly</text>
+<text x="425" y="62" font-size="11" fill="#8b949e" text-anchor="end">27.0%</text>
+<rect x="315" y="66" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="66" width="28.1" height="4" rx="2" fill="#6E4C13"/>
+<circle cx="220" cy="83" r="4" fill="#3572A5"/>
+<text x="230" y="87" font-size="11" fill="#c9d1d9">Python</text>
+<text x="425" y="87" font-size="11" fill="#8b949e" text-anchor="end">14.9%</text>
+<rect x="315" y="91" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="91" width="15.5" height="4" rx="2" fill="#3572A5"/>
+<circle cx="220" cy="108" r="4" fill="#3A4E3A"/>
+<text x="230" y="112" font-size="11" fill="#c9d1d9">Cuda</text>
+<text x="425" y="112" font-size="11" fill="#8b949e" text-anchor="end">3.0%</text>
+<rect x="315" y="116" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="116" width="3.1" height="4" rx="2" fill="#3A4E3A"/>
+<circle cx="220" cy="133" r="4" fill="#dea584"/>
+<text x="230" y="137" font-size="11" fill="#c9d1d9">Rust</text>
+<text x="425" y="137" font-size="11" fill="#8b949e" text-anchor="end">1.5%</text>
+<rect x="315" y="141" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="141" width="1.5" height="4" rx="2" fill="#dea584"/>
+<circle cx="220" cy="158" r="4" fill="#555555"/>
+<text x="230" y="162" font-size="11" fill="#c9d1d9">C</text>
+<text x="425" y="162" font-size="11" fill="#8b949e" text-anchor="end">1.5%</text>
+<rect x="315" y="166" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="166" width="1.5" height="4" rx="2" fill="#555555"/>
+<circle cx="220" cy="183" r="4" fill="#89e051"/>
+<text x="230" y="187" font-size="11" fill="#c9d1d9">Shell</text>
+<text x="425" y="187" font-size="11" fill="#8b949e" text-anchor="end">0.5%</text>
+<rect x="315" y="191" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="191" width="0.5" height="4" rx="2" fill="#89e051"/>
+<circle cx="220" cy="208" r="4" fill="#6866fb"/>
+<text x="230" y="212" font-size="11" fill="#c9d1d9">Objective-C++</text>
+<text x="425" y="212" font-size="11" fill="#8b949e" text-anchor="end">0.3%</text>
+<rect x="315" y="216" width="104.0" height="4" rx="2" fill="#21262d"/>
+<rect x="315" y="216" width="0.3" height="4" rx="2" fill="#6866fb"/>
+<text x="16" y="214" font-size="9" fill="#484f58">estimation from 65mb of code scanned across all repositories</text>
 </svg>
