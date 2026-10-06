@@ -141,6 +141,7 @@ def generate_svg(langs_data):
 <rect x="{bar_x + label_w}" y="{y + 13}" width="{filled:.1f}" height="4" rx="2" fill="{item['color']}"/>''')
 
     total_mb = total / 1024 / 1024
+    nl = '\n'
 
     svg = f'''<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
 <style>text{{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}}</style>
@@ -149,7 +150,7 @@ def generate_svg(langs_data):
 {''.join(arcs)}
 <text x="{cx}" y="{cy + 6}" font-size="20" font-weight="bold" fill="#c9d1d9" text-anchor="middle">{len(items)}</text>
 <text x="{cx}" y="{cy + 20}" font-size="9" fill="#8b949e" text-anchor="middle">languages</text>
-{'chr(10).join(rows)}
+{nl.join(rows)}
 <text x="16" y="{H - 6}" font-size="9" fill="#484f58">estimation from {total_mb:.0f}mb of code scanned across all repositories</text>
 </svg>'''
 
