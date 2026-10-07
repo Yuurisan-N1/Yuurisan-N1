@@ -74,7 +74,6 @@
 ---
 
 <div align="center">
-<h2>Connect</h2>
 <img src="https://raw.githubusercontent.com/Yuurisan-N1/Yuurisan-N1/main/metrics.connect.svg" alt="Connect" />
 </div>
 
