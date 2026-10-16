@@ -33,5 +33,5 @@
 <rect x="375" y="124" width="15" height="15" rx="3" fill="#ff6b00" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.4s" fill="freeze"/></rect>
 <rect x="394" y="124" width="15" height="15" rx="3" fill="#ff6b00" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.44s" fill="freeze"/></rect>
 <rect x="413" y="124" width="15" height="15" rx="3" fill="#ff6b00" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.48s" fill="freeze"/></rect>
-<rect x="432" y="124" width="15" height="15" rx="3" fill="#ff6b00" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.52s" fill="freeze"/></rect>
+<rect x="432" y="124" width="15" height="15" rx="3" fill="#1e2a1e" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.52s" fill="freeze"/></rect>
 </svg>
